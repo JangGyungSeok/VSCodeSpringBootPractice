@@ -79,3 +79,4 @@
 	
 	SQL에 대한 모든 컨트롤을 하고자 할 때 매우 적합하다.
 	SQL 쿼리들이 최적화가 잘 되어 있을경우 적합하다.
+출처 : https://gmlwjd9405.github.io/2018/12/25/difference-jdbc-jpa-mybatis.html
