@@ -80,3 +80,5 @@
 	DB의 userinfo 테이블과 Spring boot 실행결과창 확인 시 일치하는 것을 확인!!
 	
 	DB와의 연동 완료!!!!!!!!!!!!
+
+# Made by 장경석
