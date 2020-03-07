@@ -15,9 +15,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
- 
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+
 import com.example.demo.security.service.CustomUserDetailsService;
- 
+import com.example.demo.security.handlers.CustomLoginSuccessHandler;
 @EnableWebSecurity
 public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
     
@@ -29,6 +30,13 @@ public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAda
       return new BCryptPasswordEncoder();
     }
     
+    // 로그인 성공 핸들러 작성 후 추가된부분
+    // 로그인 성공 시의 로직을 커스텀하여 사용하겠다.
+    @Bean
+    public AuthenticationSuccessHandler successHandler(){
+        return new CustomLoginSuccessHandler("/");
+    }
+
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
@@ -37,7 +45,7 @@ public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAda
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests().anyRequest().authenticated().and().formLogin();
+        http.csrf().disable().authorizeRequests().anyRequest().authenticated().and().formLogin().successHandler(successHandler());
     }
  
     @Override
