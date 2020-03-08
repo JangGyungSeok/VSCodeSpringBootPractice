@@ -1,482 +1,134 @@
-2020-03-07 16:13:39.524  INFO 8004 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-6SMJ3AP with PID 8004 (C:\Users\JKS\Desktop\testWorkspace\demo\target\classes started by JKS in C:\Users\JKS\Desktop\testWorkspace\demo)
-2020-03-07 16:13:39.544  INFO 8004 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2020-03-07 16:13:39.751  INFO 8004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-03-07 16:13:39.752  INFO 8004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-03-07 16:13:43.375  INFO 8004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-03-07 16:13:43.415  INFO 8004 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-03-07 16:13:43.415  INFO 8004 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-03-07 16:13:44.201  INFO 8004 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2020-03-07 16:13:44.225  INFO 8004 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-03-07 16:13:44.229  INFO 8004 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4445 ms
-2020-03-07 16:13:44.421  WARN 8004 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testController': Unsatisfied dependency expressed through field 'testService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testService': Unsatisfied dependency expressed through field 'testMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testMapper' defined in file [C:\Users\JKS\Desktop\testWorkspace\demo\target\classes\com\example\demo\db\mapper\TestMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/db/DatabaseConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
-2020-03-07 16:13:44.553  INFO 8004 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-03-07 16:13:44.715  INFO 8004 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+2020-03-08 18:20:46.985  INFO 10948 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-6SMJ3AP with PID 10948 (C:\Users\JKS\Desktop\TIL\PracticeSpring\practice\target\classes started by JKS in C:\Users\JKS\Desktop\TIL\PracticeSpring\practice)
+2020-03-08 18:20:47.044  INFO 10948 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2020-03-08 18:20:47.266  INFO 10948 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-08 18:20:47.278  INFO 10948 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-08 18:20:51.458  INFO 10948 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-08 18:20:51.487  INFO 10948 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-08 18:20:51.491  INFO 10948 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-08 18:20:52.108  INFO 10948 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-03-08 18:20:52.143  INFO 10948 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-08 18:20:52.145  INFO 10948 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4847 ms
+2020-03-08 18:20:53.068  INFO 10948 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/openapi/**'], []
+2020-03-08 18:20:53.142  INFO 10948 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17a0e633, org.springframework.security.web.context.SecurityContextPersistenceFilter@42e4ed17, org.springframework.security.web.header.HeaderWriterFilter@4ad8f209, org.springframework.security.web.authentication.logout.LogoutFilter@2f251ab5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1c80891e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7773f4d4, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@167de145, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b9709df, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59cf5438, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35fe3b4, org.springframework.security.web.session.SessionManagementFilter@330bc33, org.springframework.security.web.access.ExceptionTranslationFilter@616a931e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@76913e66]
+2020-03-08 18:20:53.388  INFO 10948 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-08 18:20:53.718  INFO 10948 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-08 18:20:53.885  INFO 10948 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-08 18:20:53.920  INFO 10948 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 9.756 seconds (JVM running for 12.93)
+2020-03-08 18:21:02.962  INFO 10948 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-08 18:21:02.970  INFO 10948 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-08 18:21:03.006  INFO 10948 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 36 ms
+2020-03-08 18:21:03.636  WARN 10948 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [390] milliseconds.
+2020-03-08 18:21:28.538  INFO 10948 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-08 18:21:28.978  INFO 10948 --- [http-nio-8080-exec-3] jdbc.connection                          : 1. Connection opened
+2020-03-08 18:21:28.982  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.new Connection returned 
+2020-03-08 18:21:28.982  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.getNetworkTimeout() returned 0
+2020-03-08 18:21:28.998  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.isReadOnly() returned false
+2020-03-08 18:21:29.002  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.getAutoCommit() returned true
+2020-03-08 18:21:29.002  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.isValid(1) returned true
+2020-03-08 18:21:29.006  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.getTransactionIsolation() returned 4
+2020-03-08 18:21:29.014  INFO 10948 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-08 18:21:29.034  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.getAutoCommit() returned true
+2020-03-08 18:21:29.086  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.new PreparedStatement returned 
+2020-03-08 18:21:29.090  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.prepareStatement(SELECT * FROM user WHERE username = ?) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@1a0f2e86
+2020-03-08 18:21:29.098  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.setString(1, "abc") returned 
+2020-03-08 18:21:29.114  INFO 10948 --- [http-nio-8080-exec-3] jdbc.sqlonly                             : SELECT * FROM user WHERE username = 'abc'
 
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-03-07 16:13:44.783 ERROR 8004 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
-
-Reason: Failed to determine a suitable driver class
-
-
-Action:
-
-Consider the following:
-	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
-	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
-
-2020-03-07 16:16:19.663  INFO 652 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-6SMJ3AP with PID 652 (C:\Users\JKS\Desktop\testWorkspace\demo\target\classes started by JKS in C:\Users\JKS\Desktop\testWorkspace\demo)
-2020-03-07 16:16:19.673  INFO 652 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2020-03-07 16:16:19.868  INFO 652 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-03-07 16:16:19.872  INFO 652 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-03-07 16:16:24.207  INFO 652 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-03-07 16:16:24.251  INFO 652 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-03-07 16:16:24.255  INFO 652 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-03-07 16:16:24.932  INFO 652 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2020-03-07 16:16:24.961  INFO 652 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-03-07 16:16:24.965  INFO 652 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5089 ms
-2020-03-07 16:16:25.137  WARN 652 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testController': Unsatisfied dependency expressed through field 'testService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testService': Unsatisfied dependency expressed through field 'testMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testMapper' defined in file [C:\Users\JKS\Desktop\testWorkspace\demo\target\classes\com\example\demo\db\mapper\TestMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/db/DatabaseConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
-2020-03-07 16:16:25.187  INFO 652 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-03-07 16:16:25.339  INFO 652 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-03-07 16:16:25.469 ERROR 652 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
-
-Reason: Failed to determine a suitable driver class
-
-
-Action:
-
-Consider the following:
-	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
-	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
-
-2020-03-07 16:45:12.206  INFO 15340 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-6SMJ3AP with PID 15340 (C:\Users\JKS\Desktop\testWorkspace\demo\target\classes started by JKS in C:\Users\JKS\Desktop\testWorkspace\demo)
-2020-03-07 16:45:12.222  INFO 15340 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2020-03-07 16:45:12.447  INFO 15340 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-03-07 16:45:12.447  INFO 15340 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-03-07 16:45:12.858  INFO 15340 --- [restartedMain] o.s.c.a.ConfigurationClassParser         : Properties location [classpath;config.properties] not resolvable: class path resource [classpath;config.properties] cannot be opened because it does not exist
-2020-03-07 16:45:16.258  INFO 15340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-03-07 16:45:16.296  INFO 15340 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-03-07 16:45:16.296  INFO 15340 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-03-07 16:45:16.924  INFO 15340 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2020-03-07 16:45:16.956  INFO 15340 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-03-07 16:45:16.958  INFO 15340 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4479 ms
-2020-03-07 16:45:17.118  WARN 15340 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'globalPropertySource': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driverClassName' in value "${spring.datasource.driverClassName}"
-2020-03-07 16:45:17.147  INFO 15340 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-03-07 16:45:17.254  INFO 15340 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-03-07 16:45:17.287 ERROR 15340 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'globalPropertySource': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driverClassName' in value "${spring.datasource.driverClassName}"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at com.example.demo.DemoApplication.main(DemoApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driverClassName' in value "${spring.datasource.driverClassName}"
-	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:909) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1228) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	... 22 common frames omitted
-
-2020-03-07 16:47:22.180  INFO 11312 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-6SMJ3AP with PID 11312 (C:\Users\JKS\Desktop\testWorkspace\demo\target\classes started by JKS in C:\Users\JKS\Desktop\testWorkspace\demo)
-2020-03-07 16:47:22.191  INFO 11312 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2020-03-07 16:47:22.380  INFO 11312 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-03-07 16:47:22.416  INFO 11312 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-03-07 16:47:22.982  INFO 11312 --- [restartedMain] o.s.c.a.ConfigurationClassParser         : Properties location [classpath;config.properties] not resolvable: class path resource [classpath;config.properties] cannot be opened because it does not exist
-2020-03-07 16:47:26.551  INFO 11312 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-03-07 16:47:26.577  INFO 11312 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-03-07 16:47:26.589  INFO 11312 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-03-07 16:47:27.211  INFO 11312 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2020-03-07 16:47:27.232  INFO 11312 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-03-07 16:47:27.252  INFO 11312 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4816 ms
-2020-03-07 16:47:27.400  WARN 11312 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'globalPropertySource': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driver-class-name' in value "${spring.datasource.driver-class-name}"
-2020-03-07 16:47:27.406  INFO 11312 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-03-07 16:47:27.550  INFO 11312 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-03-07 16:47:27.610 ERROR 11312 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'globalPropertySource': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driver-class-name' in value "${spring.datasource.driver-class-name}"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at com.example.demo.DemoApplication.main(DemoApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driver-class-name' in value "${spring.datasource.driver-class-name}"
-	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:909) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1228) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	... 22 common frames omitted
-
-2020-03-07 16:51:10.922  INFO 10800 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-6SMJ3AP with PID 10800 (C:\Users\JKS\Desktop\testWorkspace\demo\target\classes started by JKS in C:\Users\JKS\Desktop\testWorkspace\demo)
-2020-03-07 16:51:10.934  INFO 10800 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2020-03-07 16:51:11.109  INFO 10800 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-03-07 16:51:11.113  INFO 10800 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-03-07 16:51:11.475  INFO 10800 --- [restartedMain] o.s.c.a.ConfigurationClassParser         : Properties location [classpath;config.properties] not resolvable: class path resource [classpath;config.properties] cannot be opened because it does not exist
-2020-03-07 16:51:15.370  INFO 10800 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-03-07 16:51:15.405  INFO 10800 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-03-07 16:51:15.410  INFO 10800 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-03-07 16:51:16.165  INFO 10800 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2020-03-07 16:51:16.222  INFO 10800 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-03-07 16:51:16.222  INFO 10800 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5109 ms
-2020-03-07 16:51:16.458  WARN 10800 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'globalPropertySource': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driverClassName' in value "${spring.datasource.driverClassName}"
-2020-03-07 16:51:16.474  INFO 10800 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-03-07 16:51:16.605  INFO 10800 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-03-07 16:51:16.651 ERROR 10800 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'globalPropertySource': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driverClassName' in value "${spring.datasource.driverClassName}"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at com.example.demo.DemoApplication.main(DemoApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driverClassName' in value "${spring.datasource.driverClassName}"
-	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:909) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1228) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	... 22 common frames omitted
-
-2020-03-07 16:53:03.036  INFO 9424 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-6SMJ3AP with PID 9424 (C:\Users\JKS\Desktop\testWorkspace\demo\target\classes started by JKS in C:\Users\JKS\Desktop\testWorkspace\demo)
-2020-03-07 16:53:03.043  INFO 9424 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2020-03-07 16:53:03.201  INFO 9424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-03-07 16:53:03.201  INFO 9424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-03-07 16:53:03.608  INFO 9424 --- [restartedMain] o.s.c.a.ConfigurationClassParser         : Properties location [classpath;config.properties] not resolvable: class path resource [classpath;config.properties] cannot be opened because it does not exist
-2020-03-07 16:53:07.220  INFO 9424 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-03-07 16:53:07.281  INFO 9424 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-03-07 16:53:07.317  INFO 9424 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-03-07 16:53:08.265  INFO 9424 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2020-03-07 16:53:08.320  INFO 9424 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-03-07 16:53:08.329  INFO 9424 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5108 ms
-2020-03-07 16:53:08.540  WARN 9424 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'globalPropertySource': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driver-class-name' in value "${spring.datasource.driver-class-name}"
-2020-03-07 16:53:08.552  INFO 9424 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-03-07 16:53:08.699  INFO 9424 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-03-07 16:53:08.763 ERROR 9424 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'globalPropertySource': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driver-class-name' in value "${spring.datasource.driver-class-name}"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at com.example.demo.DemoApplication.main(DemoApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driver-class-name' in value "${spring.datasource.driver-class-name}"
-	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:909) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1228) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	... 22 common frames omitted
-
-2020-03-07 17:00:20.187  INFO 10772 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-6SMJ3AP with PID 10772 (C:\Users\JKS\Desktop\testWorkspace\demo\target\classes started by JKS in C:\Users\JKS\Desktop\testWorkspace\demo)
-2020-03-07 17:00:20.201  INFO 10772 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2020-03-07 17:00:20.378  INFO 10772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-03-07 17:00:20.378  INFO 10772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-03-07 17:00:20.817  INFO 10772 --- [restartedMain] o.s.c.a.ConfigurationClassParser         : Properties location [classpath;config.properties] not resolvable: class path resource [classpath;config.properties] cannot be opened because it does not exist
-2020-03-07 17:00:23.842  INFO 10772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-03-07 17:00:23.875  INFO 10772 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-03-07 17:00:23.879  INFO 10772 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-03-07 17:00:24.611  INFO 10772 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2020-03-07 17:00:24.689  INFO 10772 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-03-07 17:00:24.703  INFO 10772 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4309 ms
-2020-03-07 17:00:24.867  WARN 10772 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'globalPropertySource': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driver-class-name' in value "${spring.datasource.driver-class-name}"
-2020-03-07 17:00:24.892  INFO 10772 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-03-07 17:00:24.996  INFO 10772 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-03-07 17:00:25.016 ERROR 10772 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'globalPropertySource': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driver-class-name' in value "${spring.datasource.driver-class-name}"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-	at com.example.demo.DemoApplication.main(DemoApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.2.5.RELEASE.jar:2.2.5.RELEASE]
-Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.datasource.driver-class-name' in value "${spring.datasource.driver-class-name}"
-	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:909) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1228) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	... 22 common frames omitted
-
-2020-03-07 17:03:31.199  INFO 8924 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-6SMJ3AP with PID 8924 (C:\Users\JKS\Desktop\testWorkspace\demo\target\classes started by JKS in C:\Users\JKS\Desktop\testWorkspace\demo)
-2020-03-07 17:03:31.207  INFO 8924 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2020-03-07 17:03:31.388  INFO 8924 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-03-07 17:03:31.393  INFO 8924 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-03-07 17:03:36.224  INFO 8924 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-03-07 17:03:36.261  INFO 8924 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-03-07 17:03:36.261  INFO 8924 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-03-07 17:03:37.367  INFO 8924 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2020-03-07 17:03:37.399  INFO 8924 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-03-07 17:03:37.399  INFO 8924 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5990 ms
-2020-03-07 17:03:38.725  INFO 8924 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/openapi/**'], []
-2020-03-07 17:03:38.865  INFO 8924 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49eeca77, org.springframework.security.web.context.SecurityContextPersistenceFilter@75e9c2e0, org.springframework.security.web.header.HeaderWriterFilter@3109a3b4, org.springframework.security.web.authentication.logout.LogoutFilter@4d57a50b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@38f0368b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@77c1bfae, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5877b6be, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60596e09, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54f616e1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1cd3ce5d, org.springframework.security.web.session.SessionManagementFilter@4cd7a18f, org.springframework.security.web.access.ExceptionTranslationFilter@328e804c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b161c47]
-2020-03-07 17:03:39.099  INFO 8924 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-03-07 17:03:39.631  INFO 8924 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-03-07 17:03:39.849  INFO 8924 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-03-07 17:03:39.900  INFO 8924 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 10.291 seconds (JVM running for 11.581)
-2020-03-07 17:04:07.003  INFO 8924 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-03-07 17:04:07.006  INFO 8924 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-03-07 17:04:07.055  INFO 8924 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
-2020-03-07 17:04:07.428  WARN 8924 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [253] milliseconds.
-2020-03-07 17:04:28.321  INFO 8924 --- [http-nio-8080-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-03-07 17:04:28.826  INFO 8924 --- [http-nio-8080-exec-7] jdbc.connection                          : 1. Connection opened
-2020-03-07 17:04:28.826  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.new Connection returned 
-2020-03-07 17:04:28.830  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.getNetworkTimeout() returned 0
-2020-03-07 17:04:28.859  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.isReadOnly() returned false
-2020-03-07 17:04:28.859  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.getAutoCommit() returned true
-2020-03-07 17:04:28.863  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.isValid(1) returned true
-2020-03-07 17:04:28.891  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.getTransactionIsolation() returned 4
-2020-03-07 17:04:28.899  INFO 8924 --- [http-nio-8080-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-03-07 17:04:28.923  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.getAutoCommit() returned true
-2020-03-07 17:04:28.983  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.new PreparedStatement returned 
-2020-03-07 17:04:28.999  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.prepareStatement(SELECT * FROM user WHERE username = ?) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@43ecfabc
-2020-03-07 17:04:29.019  INFO 8924 --- [HikariPool-1 connection adder] jdbc.connection                          : 2. Connection opened
-2020-03-07 17:04:29.019  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.setString(1, "abc") returned 
-2020-03-07 17:04:29.047  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 2. Connection.new Connection returned 
-2020-03-07 17:04:29.047  INFO 8924 --- [http-nio-8080-exec-7] jdbc.sqlonly                             : SELECT * FROM user WHERE username = 'abc'
-
-2020-03-07 17:04:29.055  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 2. Connection.isReadOnly() returned false
-2020-03-07 17:04:29.063  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 2. Connection.getAutoCommit() returned true
-2020-03-07 17:04:29.087  INFO 8924 --- [HikariPool-1 connection adder] jdbc.connection                          : 3. Connection opened
-2020-03-07 17:04:29.095  INFO 8924 --- [http-nio-8080-exec-7] jdbc.sqltiming                           : SELECT * FROM user WHERE username = 'abc'
- {executed in 40 msec}
-2020-03-07 17:04:29.119  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 3. Connection.new Connection returned 
-2020-03-07 17:04:29.119  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.execute() returned true
-2020-03-07 17:04:29.119  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 3. Connection.isReadOnly() returned false
-2020-03-07 17:04:29.119  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 3. Connection.getAutoCommit() returned true
-2020-03-07 17:04:29.131  INFO 8924 --- [HikariPool-1 connection adder] jdbc.connection                          : 4. Connection opened
-2020-03-07 17:04:29.137  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.new ResultSet returned 
-2020-03-07 17:04:29.158  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 4. Connection.new Connection returned 
-2020-03-07 17:04:29.162  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 4. Connection.isReadOnly() returned false
-2020-03-07 17:04:29.158  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.getResultSet() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@f510b5d
-2020-03-07 17:04:29.186  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 4. Connection.getAutoCommit() returned true
-2020-03-07 17:04:29.275  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getMetaData() returned com.mysql.cj.jdbc.result.ResultSetMetaData@692347b4 - Field level information: 
-	com.mysql.cj.result.Field@56f8821f[dbName=testdb,tableName=user,originalTableName=user,columnName=username,originalColumnName=username,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags=, charsetIndex=33, charsetName=UTF-8]
-	com.mysql.cj.result.Field@44f445da[dbName=testdb,tableName=user,originalTableName=user,columnName=password,originalColumnName=password,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags=, charsetIndex=33, charsetName=UTF-8]
-	com.mysql.cj.result.Field@697218e6[dbName=testdb,tableName=user,originalTableName=user,columnName=name,originalColumnName=name,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags=, charsetIndex=33, charsetName=UTF-8]
-	com.mysql.cj.result.Field@1a1fec9b[dbName=testdb,tableName=user,originalTableName=user,columnName=isAccountNonExpired,originalColumnName=isAccountNonExpired,mysqlType=1(FIELD_TYPE_BIT),sqlType=-7,flags=, charsetIndex=63, charsetName=ISO-8859-1]
-	com.mysql.cj.result.Field@8657dbd[dbName=testdb,tableName=user,originalTableName=user,columnName=isAccountNonLocked,originalColumnName=isAccountNonLocked,mysqlType=1(FIELD_TYPE_BIT),sqlType=-7,flags=, charsetIndex=63, charsetName=ISO-8859-1]
-	com.mysql.cj.result.Field@6ed923fe[dbName=testdb,tableName=user,originalTableName=user,columnName=isCredentialsNonExpired,originalColumnName=isCredentialsNonExpired,mysqlType=1(FIELD_TYPE_BIT),sqlType=-7,flags=, charsetIndex=63, charsetName=ISO-8859-1]
-	com.mysql.cj.result.Field@1795a3eb[dbName=testdb,tableName=user,originalTableName=user,columnName=isEnabled,originalColumnName=isEnabled,mysqlType=1(FIELD_TYPE_BIT),sqlType=-7,flags=, charsetIndex=63, charsetName=ISO-8859-1]
-2020-03-07 17:04:29.333  INFO 8924 --- [HikariPool-1 connection adder] jdbc.connection                          : 5. Connection opened
-2020-03-07 17:04:29.413  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 5. Connection.new Connection returned 
-2020-03-07 17:04:29.417  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getType() returned 1003
-2020-03-07 17:04:29.431  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.isClosed() returned false
-2020-03-07 17:04:29.428  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 5. Connection.isReadOnly() returned false
-2020-03-07 17:04:29.435  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 5. Connection.getAutoCommit() returned true
-2020-03-07 17:04:29.435  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.next() returned true
-2020-03-07 17:04:29.443  INFO 8924 --- [HikariPool-1 connection adder] jdbc.connection                          : 6. Connection opened
-2020-03-07 17:04:29.457  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 6. Connection.new Connection returned 
-2020-03-07 17:04:29.461  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 6. Connection.isReadOnly() returned false
-2020-03-07 17:04:29.465  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 6. Connection.getAutoCommit() returned true
-2020-03-07 17:04:29.465  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getString(username) returned abc
-2020-03-07 17:04:29.473  INFO 8924 --- [HikariPool-1 connection adder] jdbc.connection                          : 7. Connection opened
-2020-03-07 17:04:29.481  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getString(password) returned $2a$10$zNM1N.WnfC1Sq.vkqieCnuEfE3sZ3Hwo6.ytaSBtFTyg33qr2oI2G
-2020-03-07 17:04:29.481  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 7. Connection.new Connection returned 
-2020-03-07 17:04:29.485  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 7. Connection.isReadOnly() returned false
-2020-03-07 17:04:29.485  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getString(name) returned JKS
-2020-03-07 17:04:29.489  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 7. Connection.getAutoCommit() returned true
-2020-03-07 17:04:29.489  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getBoolean(isAccountNonExpired) returned true
-2020-03-07 17:04:29.501  INFO 8924 --- [HikariPool-1 connection adder] jdbc.connection                          : 8. Connection opened
-2020-03-07 17:04:29.501  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getBoolean(isAccountNonLocked) returned true
-2020-03-07 17:04:29.517  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 8. Connection.new Connection returned 
-2020-03-07 17:04:29.521  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 8. Connection.isReadOnly() returned false
-2020-03-07 17:04:29.521  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getBoolean(isCredentialsNonExpired) returned true
-2020-03-07 17:04:29.521  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 8. Connection.getAutoCommit() returned true
-2020-03-07 17:04:29.521  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getBoolean(isEnabled) returned true
-2020-03-07 17:04:29.532  INFO 8924 --- [HikariPool-1 connection adder] jdbc.connection                          : 9. Connection opened
-2020-03-07 17:04:29.532  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 9. Connection.new Connection returned 
-2020-03-07 17:04:29.536  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.isClosed() returned false
-2020-03-07 17:04:29.536  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 9. Connection.isReadOnly() returned false
-2020-03-07 17:04:29.581  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 9. Connection.getAutoCommit() returned true
-2020-03-07 17:04:29.569  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultsettable                      : 
+2020-03-08 18:21:29.126  INFO 10948 --- [HikariPool-1 connection adder] jdbc.connection                          : 2. Connection opened
+2020-03-08 18:21:29.146  INFO 10948 --- [http-nio-8080-exec-3] jdbc.sqltiming                           : SELECT * FROM user WHERE username = 'abc'
+ {executed in 28 msec}
+2020-03-08 18:21:29.154  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.execute() returned true
+2020-03-08 18:21:29.154  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 2. Connection.new Connection returned 
+2020-03-08 18:21:29.174  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.new ResultSet returned 
+2020-03-08 18:21:29.200  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 2. Connection.isReadOnly() returned false
+2020-03-08 18:21:29.200  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.getResultSet() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@37953160
+2020-03-08 18:21:29.200  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 2. Connection.getAutoCommit() returned true
+2020-03-08 18:21:29.216  INFO 10948 --- [HikariPool-1 connection adder] jdbc.connection                          : 3. Connection opened
+2020-03-08 18:21:29.220  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getMetaData() returned com.mysql.cj.jdbc.result.ResultSetMetaData@29b619f9 - Field level information: 
+	com.mysql.cj.result.Field@1301e61a[dbName=testdb,tableName=user,originalTableName=user,columnName=username,originalColumnName=username,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags=, charsetIndex=33, charsetName=UTF-8]
+	com.mysql.cj.result.Field@6bebf09f[dbName=testdb,tableName=user,originalTableName=user,columnName=password,originalColumnName=password,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags=, charsetIndex=33, charsetName=UTF-8]
+	com.mysql.cj.result.Field@3ac453d7[dbName=testdb,tableName=user,originalTableName=user,columnName=name,originalColumnName=name,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags=, charsetIndex=33, charsetName=UTF-8]
+	com.mysql.cj.result.Field@2324eca7[dbName=testdb,tableName=user,originalTableName=user,columnName=isAccountNonExpired,originalColumnName=isAccountNonExpired,mysqlType=1(FIELD_TYPE_BIT),sqlType=-7,flags=, charsetIndex=63, charsetName=ISO-8859-1]
+	com.mysql.cj.result.Field@3f09efef[dbName=testdb,tableName=user,originalTableName=user,columnName=isAccountNonLocked,originalColumnName=isAccountNonLocked,mysqlType=1(FIELD_TYPE_BIT),sqlType=-7,flags=, charsetIndex=63, charsetName=ISO-8859-1]
+	com.mysql.cj.result.Field@b528f99[dbName=testdb,tableName=user,originalTableName=user,columnName=isCredentialsNonExpired,originalColumnName=isCredentialsNonExpired,mysqlType=1(FIELD_TYPE_BIT),sqlType=-7,flags=, charsetIndex=63, charsetName=ISO-8859-1]
+	com.mysql.cj.result.Field@13903fcf[dbName=testdb,tableName=user,originalTableName=user,columnName=isEnabled,originalColumnName=isEnabled,mysqlType=1(FIELD_TYPE_BIT),sqlType=-7,flags=, charsetIndex=63, charsetName=ISO-8859-1]
+2020-03-08 18:21:29.244  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 3. Connection.new Connection returned 
+2020-03-08 18:21:29.256  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 3. Connection.isReadOnly() returned false
+2020-03-08 18:21:29.260  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 3. Connection.getAutoCommit() returned true
+2020-03-08 18:21:29.260  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getType() returned 1003
+2020-03-08 18:21:29.264  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.isClosed() returned false
+2020-03-08 18:21:29.268  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.next() returned true
+2020-03-08 18:21:29.268  INFO 10948 --- [HikariPool-1 connection adder] jdbc.connection                          : 4. Connection opened
+2020-03-08 18:21:29.272  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 4. Connection.new Connection returned 
+2020-03-08 18:21:29.296  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getString(username) returned abc
+2020-03-08 18:21:29.304  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 4. Connection.isReadOnly() returned false
+2020-03-08 18:21:29.304  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getString(password) returned $2a$10$zNM1N.WnfC1Sq.vkqieCnuEfE3sZ3Hwo6.ytaSBtFTyg33qr2oI2G
+2020-03-08 18:21:29.304  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 4. Connection.getAutoCommit() returned true
+2020-03-08 18:21:29.312  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getString(name) returned JKS
+2020-03-08 18:21:29.336  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getBoolean(isAccountNonExpired) returned true
+2020-03-08 18:21:29.340  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getBoolean(isAccountNonLocked) returned true
+2020-03-08 18:21:29.344  INFO 10948 --- [HikariPool-1 connection adder] jdbc.connection                          : 5. Connection opened
+2020-03-08 18:21:29.340  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getBoolean(isCredentialsNonExpired) returned true
+2020-03-08 18:21:29.368  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 5. Connection.new Connection returned 
+2020-03-08 18:21:29.368  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getBoolean(isEnabled) returned true
+2020-03-08 18:21:29.368  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 5. Connection.isReadOnly() returned false
+2020-03-08 18:21:29.372  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.isClosed() returned false
+2020-03-08 18:21:29.372  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 5. Connection.getAutoCommit() returned true
+2020-03-08 18:21:29.380  INFO 10948 --- [HikariPool-1 connection adder] jdbc.connection                          : 6. Connection opened
+2020-03-08 18:21:29.388  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultsettable                      : 
 |---------|-------------------------------------------------------------|-----|--------------------|-------------------|------------------------|----------|
 |username |password                                                     |name |isaccountnonexpired |isaccountnonlocked |iscredentialsnonexpired |isenabled |
 |---------|-------------------------------------------------------------|-----|--------------------|-------------------|------------------------|----------|
 |abc      |$2a$10$zNM1N.WnfC1Sq.vkqieCnuEfE3sZ3Hwo6.ytaSBtFTyg33qr2oI2G |JKS  |true                |true               |true                    |true      |
 |---------|-------------------------------------------------------------|-----|--------------------|-------------------|------------------------|----------|
 
-2020-03-07 17:04:29.605  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.next() returned false
-2020-03-07 17:04:29.613  INFO 8924 --- [HikariPool-1 connection adder] jdbc.connection                          : 10. Connection opened
-2020-03-07 17:04:29.621  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 10. Connection.new Connection returned 
-2020-03-07 17:04:29.617  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.close() returned void
-2020-03-07 17:04:29.633  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 10. Connection.isReadOnly() returned false
-2020-03-07 17:04:29.637  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.getMetaData() returned com.mysql.cj.jdbc.DatabaseMetaData@5ff34c33
-2020-03-07 17:04:29.657  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.getMoreResults() returned false
-2020-03-07 17:04:29.645  INFO 8924 --- [HikariPool-1 connection adder] jdbc.audit                               : 10. Connection.getAutoCommit() returned true
-2020-03-07 17:04:29.687  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.getUpdateCount() returned -1
-2020-03-07 17:04:29.687  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.close() returned 
-2020-03-07 17:04:29.719  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.clearWarnings() returned 
-2020-03-07 17:04:29.723  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.getAutoCommit() returned true
-2020-03-07 17:04:29.727  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.new PreparedStatement returned 
-2020-03-07 17:04:29.733  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.prepareStatement(SELECT authority_name FROM authority WHERE username = ?) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@525bc782
-2020-03-07 17:04:29.735  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.setString(1, "abc") returned 
-2020-03-07 17:04:29.737  INFO 8924 --- [http-nio-8080-exec-7] jdbc.sqlonly                             : SELECT authority_name FROM authority WHERE username = 'abc'
+2020-03-08 18:21:29.408  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 6. Connection.new Connection returned 
+2020-03-08 18:21:29.496  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.next() returned false
+2020-03-08 18:21:29.500  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 6. Connection.isReadOnly() returned false
+2020-03-08 18:21:29.500  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.close() returned void
+2020-03-08 18:21:29.500  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 6. Connection.getAutoCommit() returned true
+2020-03-08 18:21:29.500  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.getMetaData() returned com.mysql.cj.jdbc.DatabaseMetaData@59d04d93
+2020-03-08 18:21:29.508  INFO 10948 --- [HikariPool-1 connection adder] jdbc.connection                          : 7. Connection opened
+2020-03-08 18:21:29.512  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 7. Connection.new Connection returned 
+2020-03-08 18:21:29.512  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 7. Connection.isReadOnly() returned false
+2020-03-08 18:21:29.536  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 7. Connection.getAutoCommit() returned true
+2020-03-08 18:21:29.512  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.getMoreResults() returned false
+2020-03-08 18:21:29.548  INFO 10948 --- [HikariPool-1 connection adder] jdbc.connection                          : 8. Connection opened
+2020-03-08 18:21:29.548  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.getUpdateCount() returned -1
+2020-03-08 18:21:29.572  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 8. Connection.new Connection returned 
+2020-03-08 18:21:29.588  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 8. Connection.isReadOnly() returned false
+2020-03-08 18:21:29.572  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.close() returned 
+2020-03-08 18:21:29.613  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 8. Connection.getAutoCommit() returned true
+2020-03-08 18:21:29.641  INFO 10948 --- [HikariPool-1 connection adder] jdbc.connection                          : 9. Connection opened
+2020-03-08 18:21:29.641  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 9. Connection.new Connection returned 
+2020-03-08 18:21:29.645  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 9. Connection.isReadOnly() returned false
+2020-03-08 18:21:29.653  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.clearWarnings() returned 
+2020-03-08 18:21:29.685  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 9. Connection.getAutoCommit() returned true
+2020-03-08 18:21:29.689  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.getAutoCommit() returned true
+2020-03-08 18:21:29.689  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.new PreparedStatement returned 
+2020-03-08 18:21:29.689  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.prepareStatement(SELECT authority_name FROM authority WHERE username = ?) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@23b41877
+2020-03-08 18:21:29.696  INFO 10948 --- [HikariPool-1 connection adder] jdbc.connection                          : 10. Connection opened
+2020-03-08 18:21:29.713  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.setString(1, "abc") returned 
+2020-03-08 18:21:29.733  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 10. Connection.new Connection returned 
+2020-03-08 18:21:29.733  INFO 10948 --- [http-nio-8080-exec-3] jdbc.sqlonly                             : SELECT authority_name FROM authority WHERE username = 'abc'
 
-2020-03-07 17:04:29.745  INFO 8924 --- [http-nio-8080-exec-7] jdbc.sqltiming                           : SELECT authority_name FROM authority WHERE username = 'abc'
- {executed in 8 msec}
-2020-03-07 17:04:29.773  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.execute() returned true
-2020-03-07 17:04:29.785  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.new ResultSet returned 
-2020-03-07 17:04:29.793  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.getResultSet() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@14885085
-2020-03-07 17:04:29.822  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getMetaData() returned com.mysql.cj.jdbc.result.ResultSetMetaData@5f5f1dc6 - Field level information: 
-	com.mysql.cj.result.Field@7a5f95e0[dbName=testdb,tableName=authority,originalTableName=authority,columnName=authority_name,originalColumnName=authority_name,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags=, charsetIndex=33, charsetName=UTF-8]
-2020-03-07 17:04:29.875  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getType() returned 1003
-2020-03-07 17:04:29.891  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.isClosed() returned false
-2020-03-07 17:04:29.891  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.next() returned true
-2020-03-07 17:04:29.895  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getString(authority_name) returned ADMIN
-2020-03-07 17:04:29.903  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.isClosed() returned false
-2020-03-07 17:04:29.903  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.next() returned true
-2020-03-07 17:04:29.907  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.getString(authority_name) returned USER
-2020-03-07 17:04:29.907  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.isClosed() returned false
-2020-03-07 17:04:29.907  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultsettable                      : 
+2020-03-08 18:21:29.733  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 10. Connection.isReadOnly() returned false
+2020-03-08 18:21:29.737  INFO 10948 --- [HikariPool-1 connection adder] jdbc.audit                               : 10. Connection.getAutoCommit() returned true
+2020-03-08 18:21:29.737  INFO 10948 --- [http-nio-8080-exec-3] jdbc.sqltiming                           : SELECT authority_name FROM authority WHERE username = 'abc'
+ {executed in 4 msec}
+2020-03-08 18:21:29.737  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.execute() returned true
+2020-03-08 18:21:29.741  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.new ResultSet returned 
+2020-03-08 18:21:29.741  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.getResultSet() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@28c0a8e3
+2020-03-08 18:21:29.745  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getMetaData() returned com.mysql.cj.jdbc.result.ResultSetMetaData@1054720d - Field level information: 
+	com.mysql.cj.result.Field@ca1b9df[dbName=testdb,tableName=authority,originalTableName=authority,columnName=authority_name,originalColumnName=authority_name,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags=, charsetIndex=33, charsetName=UTF-8]
+2020-03-08 18:21:29.777  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getType() returned 1003
+2020-03-08 18:21:29.813  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.isClosed() returned false
+2020-03-08 18:21:29.833  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.next() returned true
+2020-03-08 18:21:29.836  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getString(authority_name) returned ADMIN
+2020-03-08 18:21:29.848  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.isClosed() returned false
+2020-03-08 18:21:29.872  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.next() returned true
+2020-03-08 18:21:29.872  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.getString(authority_name) returned USER
+2020-03-08 18:21:29.880  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.isClosed() returned false
+2020-03-08 18:21:29.904  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultsettable                      : 
 |---------------|
 |authority_name |
 |---------------|
@@ -484,30 +136,10 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'sp
 |USER           |
 |---------------|
 
-2020-03-07 17:04:29.919  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.next() returned false
-2020-03-07 17:04:29.923  INFO 8924 --- [http-nio-8080-exec-7] jdbc.resultset                           : 1. ResultSet.close() returned void
-2020-03-07 17:04:29.923  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.getMetaData() returned com.mysql.cj.jdbc.DatabaseMetaData@337214b3
-2020-03-07 17:04:29.923  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.getMoreResults() returned false
-2020-03-07 17:04:29.927  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.getUpdateCount() returned -1
-2020-03-07 17:04:29.927  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. PreparedStatement.close() returned 
-2020-03-07 17:04:29.931  INFO 8924 --- [http-nio-8080-exec-7] jdbc.audit                               : 1. Connection.clearWarnings() returned 
-2020-03-07 18:44:06.689  INFO 5424 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-6SMJ3AP with PID 5424 (C:\Users\JKS\Desktop\TIL\PracticeSpring\practice\target\classes started by JKS in C:\Users\JKS\Desktop\TIL\PracticeSpring\practice)
-2020-03-07 18:44:06.893  INFO 5424 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2020-03-07 18:44:07.185  INFO 5424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-03-07 18:44:07.223  INFO 5424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-03-07 18:44:11.753  INFO 5424 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-03-07 18:44:11.798  INFO 5424 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-03-07 18:44:11.798  INFO 5424 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-03-07 18:44:13.249  INFO 5424 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2020-03-07 18:44:13.286  INFO 5424 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-03-07 18:44:13.286  INFO 5424 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6063 ms
-2020-03-07 18:44:15.689  INFO 5424 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/openapi/**'], []
-2020-03-07 18:44:15.793  INFO 5424 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13aaabaa, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f53a621, org.springframework.security.web.header.HeaderWriterFilter@3ad89aab, org.springframework.security.web.authentication.logout.LogoutFilter@1271d34a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2f3aa8c9, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@ab636c7, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@48e4281c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@547747a9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5375eea9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1cd439e4, org.springframework.security.web.session.SessionManagementFilter@5908d9e2, org.springframework.security.web.access.ExceptionTranslationFilter@18426db7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ae720e9]
-2020-03-07 18:44:16.357  INFO 5424 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-03-07 18:44:17.764  INFO 5424 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-03-07 18:44:18.346  INFO 5424 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-03-07 18:44:18.554  INFO 5424 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 14.121 seconds (JVM running for 16.383)
-2020-03-07 18:44:21.439  INFO 5424 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-03-07 18:44:21.443  INFO 5424 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-03-07 18:44:21.479  INFO 5424 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 24 ms
-2020-03-07 18:44:22.059  WARN 5424 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [392] milliseconds.
+2020-03-08 18:21:29.906  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.next() returned false
+2020-03-08 18:21:29.915  INFO 10948 --- [http-nio-8080-exec-3] jdbc.resultset                           : 1. ResultSet.close() returned void
+2020-03-08 18:21:29.952  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.getMetaData() returned com.mysql.cj.jdbc.DatabaseMetaData@70274a66
+2020-03-08 18:21:29.952  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.getMoreResults() returned false
+2020-03-08 18:21:29.954  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.getUpdateCount() returned -1
+2020-03-08 18:21:29.954  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. PreparedStatement.close() returned 
+2020-03-08 18:21:29.957  INFO 10948 --- [http-nio-8080-exec-3] jdbc.audit                               : 1. Connection.clearWarnings() returned 
