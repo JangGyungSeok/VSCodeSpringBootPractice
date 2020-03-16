@@ -2,12 +2,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-   <title>Home</title>
+    <meta charset="UTF-8">
+    <title>로그인 실패 페이지</title>
 </head>
 <body>
-<h1>
-   Hello vscode Spring Boot!! 하이하이
+   <a href="/user/myinfo"> 내정보보기</a>
 
-</h1>
+    실패실패
 </body>
 </html>

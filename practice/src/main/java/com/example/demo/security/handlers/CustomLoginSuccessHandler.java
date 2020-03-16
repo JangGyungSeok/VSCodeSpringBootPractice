@@ -1,7 +1,7 @@
 package com.example.demo.security.handlers;
 
+import java.lang.String;
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,10 +12,11 @@ import com.example.demo.security.domain.SecurityMember;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
+
 public class CustomLoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler{
     
-    public CustomLoginSuccessHandler(String defaultTargetUrl){
-        setDefaultTargetUrl(defaultTargetUrl);
+    public CustomLoginSuccessHandler(String defaultUrl){
+        setDefaultTargetUrl(defaultUrl);
     }
 
 
@@ -27,13 +28,18 @@ public class CustomLoginSuccessHandler extends SavedRequestAwareAuthenticationSu
     // 로그인 시 앞서 접근한 세션내에서의 URL에 redirect해준다.
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,Authentication authentication) throws ServletException,IOException{
-        
         // 로그인 성공시점에 IP 정보를 request를 통해 SecureMember객체에 추가한다.
+        
         ((SecurityMember)authentication.getPrincipal()).setIp(getClientIp(request));
 
         HttpSession session = request.getSession();
         if(session != null){
             String redirectUrl = (String) session.getAttribute("prevPage");
+            for(int i=0;i<10;i++){
+                System.out.println(redirectUrl);
+                
+            }
+            //URL확인해보기
             if(redirectUrl != null){
                 session.removeAttribute("prevPage");
                 getRedirectStrategy().sendRedirect(request, response, redirectUrl);
@@ -45,11 +51,9 @@ public class CustomLoginSuccessHandler extends SavedRequestAwareAuthenticationSu
         else{
             super.onAuthenticationSuccess(request, response, authentication);
         }
-
     }
 
-    // 사용자의 IP를 가져오는 방법
-    // 로그인 성공 동작 시 호출된다.
+
     public static String getClientIp(HttpServletRequest request) {
         String ip = request.getHeader("X-Forwarded-For");
          if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {

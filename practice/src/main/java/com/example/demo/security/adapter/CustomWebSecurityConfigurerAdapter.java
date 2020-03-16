@@ -8,6 +8,7 @@ package com.example.demo.security.adapter;
  
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -16,15 +17,18 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.example.demo.security.service.CustomUserDetailsService;
 import com.example.demo.security.handlers.CustomLoginSuccessHandler;
+
+@Configuration
 @EnableWebSecurity
 public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
     
     @Autowired
     CustomUserDetailsService customUserDetailsService;
- 
+    
     @Bean
     public PasswordEncoder passwordEncoder() {
       return new BCryptPasswordEncoder();
@@ -33,7 +37,7 @@ public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAda
     // 로그인 성공 핸들러 작성 후 추가된부분
     // 로그인 성공 시의 로직을 커스텀하여 사용하겠다.
     @Bean
-    public AuthenticationSuccessHandler successHandler(){
+    public AuthenticationSuccessHandler mySuccessHandler(){
         return new CustomLoginSuccessHandler("/");
     }
 
@@ -45,7 +49,20 @@ public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAda
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests().anyRequest().authenticated().and().formLogin().successHandler(successHandler());
+        http
+        .csrf().disable()
+        .authorizeRequests()
+        .antMatchers("/user/**").authenticated()
+        .antMatchers("/**").permitAll()
+
+        .anyRequest().authenticated()
+        .and()
+        .formLogin().loginPage("/login")
+        .loginProcessingUrl("/login")
+        //.defaultSuccessUrl("/home")
+        .failureUrl("/fail")
+        .successHandler(mySuccessHandler())
+        ;
     }
  
     @Override
